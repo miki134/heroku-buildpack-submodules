@@ -3,16 +3,10 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-buildpack_dir=$(dirname $(pwd))
-
-bp_dir=$(cd $(dirname $0); cd ..; pwd)
-echo $bp_dir
-
-echo "Checking files in $bp_dir/"
-ls -la "$bp_dir/"
+buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
 
 echo "Checking files in $buildpack_dir/"
 ls -la "$buildpack_dir/"
 
-echo "Running install submodules script... $BUILD_DIR"
-python3 "$buildpack_dir/install_submodules.py" "$BUILD_DIR"
+echo "Running install submodules script... $buildpack_dir/scripts/install_submodules.py"
+python3 "$buildpack_dir/scripts/install_submodules.py" "$BUILD_DIR"
