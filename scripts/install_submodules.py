@@ -43,6 +43,11 @@ def clone_and_initialize_submodules(build_dir):
             print(f"Error cloning submodule '{path}': {e.stderr.decode().strip()}")
             continue
 
+        git_dir = os.path.join(build_path, ".git")
+        if os.path.exists(git_dir):
+            print(f"Removing .git folder from '{build_path}'...")
+            subprocess.run(["rm", "-rf", git_dir], check=True)
+
     print("Submodule initialization complete.")
 
 if __name__ == "__main__":
