@@ -4,7 +4,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 
 echo "Checking files in $BUILD_DIR/scripts/"
-ls -la "$BUILD_DIR/scripts/"
+ls -la "$BUILD_DIR/"
 
 echo "Running install submodules script... $BUILD_DIR"
-python3 "$BUILD_DIR/scripts/install_submodules.py" "$BUILD_DIR"
+python3 "$BUILD_DIR/install_submodules.py" "$BUILD_DIR"
