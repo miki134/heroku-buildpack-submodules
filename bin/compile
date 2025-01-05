@@ -3,12 +3,5 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-echo "Installing dependencies..."
-if [ -f "$BUILD_DIR/requirements.txt" ]; then
-  pip install -r $BUILD_DIR/requirements.txt --target $BUILD_DIR/.heroku/python
-elif [ -f "$BUILD_DIR/Pipfile" ]; then
-  pipenv install --dev --deploy --ignore-pipfile --target $BUILD_DIR/.heroku/python
-fi
-
-echo "Running git clone helper script..."
+echo "Running install submodules script..."
 python3 "$BUILD_DIR/scripts/install_submodules.py" "$BUILD_DIR"
