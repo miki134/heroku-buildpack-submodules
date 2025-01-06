@@ -3,6 +3,9 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
+echo $BUILD_DIR
+echo $GITHUB_AUTH_KEY
+
 buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
 
 echo "Checking files in $buildpack_dir/"
