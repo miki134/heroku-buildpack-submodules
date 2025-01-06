@@ -23,6 +23,10 @@ export_env_dir() {
   fi
 }
 
+echo "ENV_DIR"
+echo $ENV_DIR
+ls -la "$ENV_DIR/"
+
 export_env_dir $ENV_DIR
 
 echo "GITHUB_AUTH_KEY:"
