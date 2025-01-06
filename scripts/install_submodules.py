@@ -16,6 +16,8 @@ def clone_and_initialize_submodules(build_dir):
     config.read(gitmodules_path)
 
     auth_key = os.getenv("GITHUB_AUTH_KEY")
+    
+    print("GITHUB_AUTH_KEY: ", auth_key)
 
     for section in config.sections():
         if not section.startswith("submodule"):
