@@ -4,12 +4,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-echo $BUILD_DIR
-echo $GITHUB_AUTH_KEY
-
 buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
-
-echo "Export rnv dir"
 
 export_env_dir() {
   env_dir=$1
@@ -24,17 +19,7 @@ export_env_dir() {
   fi
 }
 
-echo "ENV_DIR"
-echo $ENV_DIR
-ls -la "$ENV_DIR/"
-
 export_env_dir $ENV_DIR
-
-echo "GITHUB_AUTH_KEY:"
-echo $GITHUB_AUTH_KEY
-
-echo "Checking files in $buildpack_dir/"
-ls -la "$buildpack_dir/"
 
 echo "Running install submodules script... $buildpack_dir/scripts/install_submodules.py"
 python3 "$buildpack_dir/scripts/install_submodules.py" "$BUILD_DIR"
