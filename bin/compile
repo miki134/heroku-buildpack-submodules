@@ -2,6 +2,7 @@
 
 BUILD_DIR=$1
 CACHE_DIR=$2
+ENV_DIR=$3
 
 echo $BUILD_DIR
 echo $GITHUB_AUTH_KEY
@@ -22,8 +23,6 @@ export_env_dir() {
     done
   fi
 }
-
-ENV_DIR=$BUILD_DIR
 
 echo "ENV_DIR"
 echo $ENV_DIR
