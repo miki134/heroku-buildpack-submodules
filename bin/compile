@@ -23,7 +23,7 @@ export_env_dir() {
   fi
 }
 
-ENV_DIR = $BUILD_DIR
+ENV_DIR=$BUILD_DIR
 
 echo "ENV_DIR"
 echo $ENV_DIR
